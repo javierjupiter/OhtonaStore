@@ -5,6 +5,6 @@
 
 <FlowPane fx:id="main" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Catalogo_UI_Controller">
     <children>
-        <JFXTreeTableView fx:id="tablaProductos"/>
+        <JFXTreeTableView fx:id="tablaProductos" stylesheets="@styles/TreeTableViewStyle.css" prefWidth="730" prefHeight="450"/>
     </children>
 </FlowPane>

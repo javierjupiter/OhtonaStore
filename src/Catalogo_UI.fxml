@@ -48,7 +48,7 @@
                      <children>
                         <AnchorPane prefHeight="500.0" prefWidth="220.0" style="-fx-background-color: #212121;" />
                         <AnchorPane prefHeight="460.0" prefWidth="740.0" style="-fx-background-color: #1C1C1C; -fx-background-radius: 10px;">
-                            <JFXTreeTableView fx:id="tablaProductos" stylesheets="@styles/TreeTableViewStyle.css" prefWidth="730" prefHeight="450"/>
+
 
                             <opaqueInsets>
                               <Insets />
