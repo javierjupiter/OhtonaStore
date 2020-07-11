@@ -9,12 +9,26 @@ public class Busquedas {
     private Producto producto = null;
     private Producto[] productos;
 
-    public boolean buscarclave(String clave){
+    public boolean buscar(int tipoBusqueda, String keyword){
         try {
             ArrayList<Producto> listaProductos = new ArrayList<Producto>();
             Connection sql = this.conexion.getConnection();
             Statement select = sql.createStatement();
-            String sentenciaSQL = "SELECT * FROM ohtona_store.inventario WHERE clave = '" + clave + "'";
+            String sentenciaSQL;
+            switch (tipoBusqueda){
+                case 1:
+                    sentenciaSQL = "SELECT * FROM ohtona_store.inventario WHERE clave = '" + keyword + "'";
+                    break;
+                case 2:
+                    sentenciaSQL = "SELECT * FROM ohtona_store.inventario WHERE descripcion = '" + keyword + "'";
+                    break;
+                case 3:
+                    sentenciaSQL = "SELECT * FROM ohtona_store.inventario WHERE telefonoProvedor = '" + keyword + "'";
+                    break;
+                default:
+                    sentenciaSQL = "SELECT * FROM ohtona_store.inventario WHERE unidadMedida = '" + keyword + "'";
+                    break;
+            }
             ResultSet resultadoConsulta = select.executeQuery(sentenciaSQL);
 
             while (resultadoConsulta.next()){
@@ -26,7 +40,6 @@ public class Busquedas {
             System.out.println(e + ": El error fue al buscar");
             return false;
         }
-
     }
 
     public boolean convertirArray(ArrayList<Producto> arreglo){

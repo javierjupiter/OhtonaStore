@@ -18,17 +18,10 @@ public class Catalogo_UI_Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle){
         System.out.println("Controlador iniciado");
         Tabla tabla = new Tabla(tablaProductos);
-        tabla.crearfila(" ", " ", " ", 0.0, 0, " ", " ", " ", " ", " ", " ", " ");
-
 
         //Busquemos
-        if (busquedas.buscarclave("Doritos")){
+        if (busquedas.buscar(3, "5135456542")){
             productos = busquedas.getProductos();
-            if (this.productos == null) {
-                System.out.println("Productos vacios");
-            }else {
-                System.out.println(productos[0].getClave());
-            }
             try {
                 for (int i = 0; i < productos.length; i++){
                     tabla.crearfila(productos[i].getClave(), productos[i].getDescripción(), productos[i].getUnidadMedida(), productos[i].getPrecioComoFloat(), productos[i].getUnidadComoINT(), productos[i].getProvedor(), productos[i].getDireccionCalle(), productos[i].getDireccionNumeroExterior(), productos[i].getDireccionNumeroInterior(),productos[i].getDireccionColonia(), productos[i].getDireccionAlcaldia(), productos[i].getTelefonoProvedor());

@@ -35,22 +35,22 @@ public class Tabla {
             else return descripcionColumn.getComputedValue(param);
         });
 
-        JFXTreeTableColumn<Producto, String> unidadMedidaColumn = new JFXTreeTableColumn<>("Unidad de medida");
-        unidadMedidaColumn.setPrefWidth(150);
+        JFXTreeTableColumn<Producto, String> unidadMedidaColumn = new JFXTreeTableColumn<>("U. medida");
+        unidadMedidaColumn.setPrefWidth(100);
         unidadMedidaColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<Producto, String> param) ->{
             if (descripcionColumn.validateValue(param)) return param.getValue().getValue().unidadMedidaProperty();
             else return descripcionColumn.getComputedValue(param);
         });
 
         JFXTreeTableColumn<Producto, String> precioColumn = new JFXTreeTableColumn<>("Precio");
-        precioColumn.setPrefWidth(150);
+        precioColumn.setPrefWidth(50);
         precioColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<Producto, String> param) ->{
             if (precioColumn.validateValue(param)) return param.getValue().getValue().precioProperty();
             else return precioColumn.getComputedValue(param);
         });
 
         JFXTreeTableColumn<Producto, String> unidadColumn = new JFXTreeTableColumn<>("Unidades");
-        unidadColumn.setPrefWidth(150);
+        unidadColumn.setPrefWidth(70);
         unidadColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<Producto, String> param) ->{
             if (precioColumn.validateValue(param)) return param.getValue().getValue().unidadProperty();
             else return precioColumn.getComputedValue(param);
@@ -63,43 +63,43 @@ public class Tabla {
             else return precioColumn.getComputedValue(param);
         });
 
-        JFXTreeTableColumn<Producto, String> direccionCalleColumn = new JFXTreeTableColumn<>("Calle de la direccion");
-        direccionCalleColumn.setPrefWidth(150);
+        JFXTreeTableColumn<Producto, String> direccionCalleColumn = new JFXTreeTableColumn<>("Calle");
+        direccionCalleColumn.setPrefWidth(100);
         direccionCalleColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<Producto, String> param) ->{
             if (direccionCalleColumn.validateValue(param)) return param.getValue().getValue().calleProperty();
             else return direccionCalleColumn.getComputedValue(param);
         });
 
-        JFXTreeTableColumn<Producto, String> direccionNumeroExteriorColumn = new JFXTreeTableColumn<>("Número Exterior");
-        direccionNumeroExteriorColumn.setPrefWidth(150);
+        JFXTreeTableColumn<Producto, String> direccionNumeroExteriorColumn = new JFXTreeTableColumn<>("No. Ext.");
+        direccionNumeroExteriorColumn.setPrefWidth(80);
         direccionNumeroExteriorColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<Producto, String> param) ->{
             if (direccionNumeroExteriorColumn.validateValue(param)) return param.getValue().getValue().numeroExteriorProperty();
             else return direccionNumeroExteriorColumn.getComputedValue(param);
         });
 
-        JFXTreeTableColumn<Producto, String> direccionNumeroInteriorColumn = new JFXTreeTableColumn<>("Número Interior");
-        direccionNumeroInteriorColumn.setPrefWidth(150);
+        JFXTreeTableColumn<Producto, String> direccionNumeroInteriorColumn = new JFXTreeTableColumn<>("No. Int.");
+        direccionNumeroInteriorColumn.setPrefWidth(80);
         direccionNumeroInteriorColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<Producto, String> param) ->{
             if (direccionNumeroInteriorColumn.validateValue(param)) return param.getValue().getValue().numeroInteriorProperty();
             else return direccionNumeroInteriorColumn.getComputedValue(param);
         });
 
         JFXTreeTableColumn<Producto, String> coloniaColumn = new JFXTreeTableColumn<>("Colonia");
-        coloniaColumn.setPrefWidth(150);
+        coloniaColumn.setPrefWidth(80);
         coloniaColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<Producto, String> param) ->{
             if (coloniaColumn.validateValue(param)) return param.getValue().getValue().coloniaProperty();
             else return coloniaColumn.getComputedValue(param);
         });
 
         JFXTreeTableColumn<Producto, String> alcaldiaColumn = new JFXTreeTableColumn<>("Alcaldia");
-        alcaldiaColumn.setPrefWidth(150);
+        alcaldiaColumn.setPrefWidth(100);
         alcaldiaColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<Producto, String> param) ->{
             if (alcaldiaColumn.validateValue(param)) return param.getValue().getValue().alcaldiaProperty();
             else return alcaldiaColumn.getComputedValue(param);
         });
 
-        JFXTreeTableColumn<Producto, String> telefonoProvedorColumn = new JFXTreeTableColumn<>("Telefono del Provedor");
-        telefonoProvedorColumn.setPrefWidth(150);
+        JFXTreeTableColumn<Producto, String> telefonoProvedorColumn = new JFXTreeTableColumn<>("Tel. Provedor");
+        telefonoProvedorColumn.setPrefWidth(100);
         telefonoProvedorColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<Producto, String> param) ->{
             if (precioColumn.validateValue(param)) return param.getValue().getValue().telefonoProvedorProperty();
             else return precioColumn.getComputedValue(param);
