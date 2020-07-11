@@ -28,6 +28,10 @@ public class Producto extends RecursiveTreeObject<Producto> {
         direccionProvedor = new Direccion(calle, numeroExterior, numeroInterior, colonia, alcaldia);
     }
 
+    public Producto(){
+        System.out.println("Producto iniciado vacio");
+    }
+
     //Creamos un set para la StringProperty de cada propiedad de la clase
 
     public StringProperty claveProperty(){
