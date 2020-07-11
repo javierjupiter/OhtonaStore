@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import com.jfoenix.controls.*?>
+<AnchorPane maxHeight="600.0" maxWidth="1000.0" minHeight="600.0" minWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #2D2D2D;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Catalogo_UI_Controller">
+    <children>
+        <VBox prefHeight="600.0" prefWidth="1000.0">
+            <children>
+                <AnchorPane prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #1C1C1C;">
+                    <children>
+                        <HBox prefHeight="100.0" prefWidth="1000.0">
+                            <children>
+                                <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@images/Ohtona.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets bottom="14.0" left="15.0" right="15.0" top="15.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Label text="Ohtona Store" textFill="#ffb39c">
+                                    <font>
+                                        <Font name="MuseoModerno Light" size="30.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets top="25.0" />
+                                    </HBox.margin>
+                                </Label>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <HBox prefHeight="101.0" prefWidth="582.0">
+
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            <AnchorPane prefHeight="500.0" prefWidth="1000.0">
+               <children>
+                  <HBox prefHeight="500.0" prefWidth="1000.0">
+                     <children>
+                        <AnchorPane prefHeight="500.0" prefWidth="220.0" style="-fx-background-color: #212121;" />
+                        <AnchorPane prefHeight="460.0" prefWidth="740.0" style="-fx-background-color: #1C1C1C; -fx-background-radius: 10px;">
+                            <JFXTreeTableView fx:id="tablaProductos" stylesheets="@styles/TreeTableViewStyle.css" prefWidth="730" prefHeight="450"/>
+
+                            <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
+            </children></VBox>
+    </children>
+</AnchorPane>
