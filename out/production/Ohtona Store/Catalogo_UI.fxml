@@ -8,6 +8,7 @@
 
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
 <AnchorPane maxHeight="600.0" maxWidth="1000.0" minHeight="600.0" minWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #2D2D2D;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Catalogo_UI_Controller">
     <children>
         <VBox prefHeight="600.0" prefWidth="1000.0">
@@ -66,18 +67,46 @@
                   <HBox prefHeight="500.0" prefWidth="1000.0">
                      <children>
                         <AnchorPane prefHeight="500.0" prefWidth="220.0" style="-fx-background-color: #212121;" />
-                        <AnchorPane prefHeight="460.0" prefWidth="740.0" style="-fx-background-color: #1C1C1C; -fx-background-radius: 10px;">
-
-
+                        <AnchorPane prefHeight="460.0" prefWidth="740.0">
                             <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
-                           <HBox.margin>
+                            <HBox.margin>
                               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                            </HBox.margin>
-                           <padding>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
+                            <children>
+                                <JFXTreeTableView fx:id="tablaProductos" stylesheets="@styles/TreeTableViewStyle.css" prefWidth="740.0" maxWidth="740.0" maxHeight="460" prefHeight="460" visible="false"/>
+                                <AnchorPane fx:id="paneBusquedaLista" prefHeight="300.0" prefWidth="395.0" visible="true" style="-fx-background-color: #1C1C1C;">
+                                    <children>
+                                        <VBox prefHeight="300.0" prefWidth="405.0">
+                                            <children>
+                                                <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@images/buscar.png" />
+                                                    </image>
+                                                    <VBox.margin>
+                                                        <Insets left="147.0" right="147.0" />
+                                                    </VBox.margin>
+                                                </ImageView>
+                                                <Label text="Busquemos algo" textFill="#424242">
+                                                    <font>
+                                                        <Font name="Mosk Normal 400" size="15.0" />
+                                                    </font>
+                                                    <VBox.margin>
+                                                        <Insets left="120.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="88.0" top="88.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </children>
                         </AnchorPane>
                      </children>
                   </HBox>

@@ -17,7 +17,7 @@ public class Catalogo_UI_Controller implements Initializable {
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle){
         System.out.println("Controlador iniciado");
-        /*Tabla tabla = new Tabla(tablaProductos);
+        Tabla tabla = new Tabla(tablaProductos);
 
         //Busquemos
         if (busquedas.buscar(3, "5135456542")){
@@ -29,7 +29,7 @@ public class Catalogo_UI_Controller implements Initializable {
             }catch (Exception e){
                 System.out.println(e + "crear tabla");
             }
-        }*/
+        }
     }
 
 
