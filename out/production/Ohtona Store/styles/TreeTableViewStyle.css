@@ -40,36 +40,6 @@
     -fx-background-color: #ffb39c;
 }
 
-/*.scroll-bar:horizontal, .scroll-bar:vertical{
-    -fx-background-color: #1C1C1C;
-}
-
-.increment-button, .decrement-button {
-    -fx-background-color: #2D2D2D;
-    -fx-border-color: transparent;
-}
-
-.scroll-bar:horizontal .track,
-.scroll-bar:vertical .track{
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
-    -fx-background-radius: 1em;
-}
-
-.scroll-bar:horizontal .thumb,
-.scroll-bar:vertical .thumb {
-    -fx-background-color: #2D2D2D;
-    -fx-background-radius: 1em;
-}
-
-.scroll-bar .filler{
-    -fx-background-color: #1C1C1C;
-}
-
-.text-area .scroll-pane .corner {
-    -fx-background-color: transparent ;
-}*/
-
 .scroll-bar:horizontal .track,
 .scroll-bar:vertical .track{
     -fx-background-color: #1C1C1C;
@@ -125,4 +95,6 @@
     -fx-background-color: #1C1C1C;
 }
 
-/*<JFXTreeTableView fx:id="tablaProductos" stylesheets="@styles/TreeTableViewStyle.css" prefWidth="730" prefHeight="450"/>*/
+.tree-table-view{
+    overflow-x:scroll
+}

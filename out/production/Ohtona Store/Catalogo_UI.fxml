@@ -9,6 +9,7 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
+<?import com.jfoenix.controls.JFXRadioButton?>
 <AnchorPane maxHeight="600.0" maxWidth="1000.0" minHeight="600.0" minWidth="1000.0" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #2D2D2D;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Catalogo_UI_Controller">
     <children>
         <VBox prefHeight="600.0" prefWidth="1000.0">
@@ -36,7 +37,7 @@
                                 <AnchorPane prefHeight="102.0" prefWidth="319.0">
                                     <children>
                                         <HBox prefHeight="102.0" prefWidth="332.0">
-                                            <JFXTextField fx:id="txtRuta" focusColor="#ffb39c" labelFloat="true" prefHeight="29.0" prefWidth="234.0" promptText="Busqueda" style="-fx-text-inner-color: #f9f9f9; -fx-prompt-text-fill: #f9f9f9;" unFocusColor="#f9f9f9">
+                                            <JFXTextField fx:id="txtBusqueda" focusColor="#ffb39c" labelFloat="true" prefHeight="29.0" prefWidth="234.0" promptText="Busqueda" style="-fx-text-inner-color: #f9f9f9; -fx-prompt-text-fill: #f9f9f9;" unFocusColor="#f9f9f9">
                                                 <HBox.margin>
                                                     <Insets top="35.0" />
                                                 </HBox.margin>
@@ -44,7 +45,7 @@
                                                     <Font name="Mosk Normal 400" size="15.0" />
                                                 </font>
                                             </JFXTextField>
-                                            <JFXButton ripplerFill="#ff866e" style="-fx-background-color: #ffb39c;" text="🔍" textFill="#1C1C1C">
+                                            <JFXButton ripplerFill="#ff866e" style="-fx-background-color: #ffb39c;" text="🔍" textFill="#1C1C1C" fx:id="btnBuscar" onMouseClicked="#onSelectedSearchButtonClicked">
                                                 <HBox.margin>
                                                     <Insets left="5.0" right="5.0" top="35" />
                                                 </HBox.margin>
@@ -66,7 +67,42 @@
                <children>
                   <HBox prefHeight="500.0" prefWidth="1000.0">
                      <children>
-                        <AnchorPane prefHeight="500.0" prefWidth="220.0" style="-fx-background-color: #212121;" />
+                        <AnchorPane prefHeight="500.0" prefWidth="220.0" style="-fx-background-color: #212121;">
+                            <VBox>
+                                <Label text="Filtrar resultados por:" textFill="#adadad">
+                                    <font>
+                                        <Font name="Mosk Normal 400" size="15.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="20.0" left="20.0" right="20.0" top="100.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <JFXRadioButton fx:id="radClave" onAction="#onSelectedRadioClave" style="-jfx-unselected-color: #fff; -jfx-selected-color: #ffb39c;" text="Clave" textFill="WHITE">
+                                    <font>
+                                        <Font name="Mosk Normal 400" size="17.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                    </VBox.margin>
+                                </JFXRadioButton>
+                                <JFXRadioButton fx:id="radDescripcion" onAction="#onSelectedRadioDescripcion" style="-jfx-unselected-color: #fff; -jfx-selected-color: #ffb39c;" text="Descripción" textFill="WHITE">
+                                    <font>
+                                        <Font name="Mosk Normal 400" size="17.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                    </VBox.margin>
+                                </JFXRadioButton>
+                                <JFXRadioButton fx:id="radTelefonoProvedor" onAction="#onSelectedRAdioTelefonoProvedor" style="-jfx-unselected-color: #fff; -jfx-selected-color: #ffb39c;" text="Telefono del provedor" textFill="WHITE">
+                                    <font>
+                                        <Font name="Mosk Normal 400" size="17.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                    </VBox.margin>
+                                </JFXRadioButton>
+                            </VBox>
+                        </AnchorPane>
                         <AnchorPane prefHeight="460.0" prefWidth="740.0">
                             <opaqueInsets>
                               <Insets />
@@ -78,34 +114,7 @@
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>
                             <children>
-                                <JFXTreeTableView fx:id="tablaProductos" stylesheets="@styles/TreeTableViewStyle.css" prefWidth="740.0" maxWidth="740.0" maxHeight="460" prefHeight="460" visible="false"/>
-                                <AnchorPane fx:id="paneBusquedaLista" prefHeight="300.0" prefWidth="395.0" visible="true" style="-fx-background-color: #1C1C1C;">
-                                    <children>
-                                        <VBox prefHeight="300.0" prefWidth="405.0">
-                                            <children>
-                                                <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                                    <image>
-                                                        <Image url="@images/buscar.png" />
-                                                    </image>
-                                                    <VBox.margin>
-                                                        <Insets left="147.0" right="147.0" />
-                                                    </VBox.margin>
-                                                </ImageView>
-                                                <Label text="Busquemos algo" textFill="#424242">
-                                                    <font>
-                                                        <Font name="Mosk Normal 400" size="15.0" />
-                                                    </font>
-                                                    <VBox.margin>
-                                                        <Insets left="120.0" />
-                                                    </VBox.margin>
-                                                </Label>
-                                            </children>
-                                            <padding>
-                                                <Insets bottom="88.0" top="88.0" />
-                                            </padding>
-                                        </VBox>
-                                    </children>
-                                </AnchorPane>
+                                <JFXTreeTableView fx:id="tablaProductos" stylesheets="@styles/TreeTableViewStyle.css" prefWidth="740.0" maxWidth="740.0" maxHeight="460" prefHeight="460"/>
                             </children>
                         </AnchorPane>
                      </children>

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class Busquedas {
 
     private final Conexion conexion = new Conexion();
-    private Producto producto = null;
     private Producto[] productos;
 
     public boolean buscar(int tipoBusqueda, String keyword){
@@ -32,7 +31,7 @@ public class Busquedas {
             ResultSet resultadoConsulta = select.executeQuery(sentenciaSQL);
 
             while (resultadoConsulta.next()){
-                this.producto = new Producto(resultadoConsulta.getString(1), resultadoConsulta.getNString(2), resultadoConsulta.getNString(3), resultadoConsulta.getDouble(4), resultadoConsulta.getInt(5), resultadoConsulta.getNString(6), resultadoConsulta.getNString(7), resultadoConsulta.getNString(8), resultadoConsulta.getNString(9), resultadoConsulta.getNString(10), resultadoConsulta.getNString(11), resultadoConsulta.getNString(12));
+                Producto producto = new Producto(resultadoConsulta.getString(1), resultadoConsulta.getNString(2), resultadoConsulta.getNString(3), resultadoConsulta.getDouble(4), resultadoConsulta.getInt(5), resultadoConsulta.getNString(6), resultadoConsulta.getNString(7), resultadoConsulta.getNString(8), resultadoConsulta.getNString(9), resultadoConsulta.getNString(10), resultadoConsulta.getNString(11), resultadoConsulta.getNString(12));
                 listaProductos.add(producto);
             }
             return convertirArray(listaProductos);

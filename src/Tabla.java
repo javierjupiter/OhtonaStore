@@ -5,6 +5,7 @@ import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.layout.HBox;
@@ -15,10 +16,12 @@ public class Tabla {
 
     //Arraylist para guardar cada dila de la tabla
     private ObservableList<Producto> productos = FXCollections.observableArrayList();
+    JFXTreeTableView<Producto> tablaProductos;
 
 
     //Inicializamos la tabla y la mostramos
     public Tabla(JFXTreeTableView<Producto> tablaProductos){
+        this.tablaProductos = tablaProductos;
 
         //Creamos una columna y le decimos que será de tipo Producto
         JFXTreeTableColumn<Producto, String> claveColumn = new JFXTreeTableColumn<>("Clave");
@@ -113,19 +116,27 @@ public class Tabla {
         final TreeItem<Producto> root = new RecursiveTreeItem<Producto>(productos, RecursiveTreeObject::getChildren);
 
         //se asigna la raiz al componente gráfico
-        tablaProductos.setRoot(root);
+        this.tablaProductos.setRoot(root);
         //Se oculta la raiz para que no se muestre en pantalla
-        tablaProductos.setShowRoot(false);
-        tablaProductos.setEditable(false);
-        tablaProductos.setPrefWidth(1000);
+        this.tablaProductos.setShowRoot(false);
+        this.tablaProductos.setEditable(false);
+        this.tablaProductos.setPrefWidth(1000);
         //Asignamos todas las columnas a la tabla para mostrar
-        tablaProductos.getColumns().setAll(claveColumn,descripcionColumn, unidadMedidaColumn, precioColumn, unidadColumn, provedorColumn,direccionCalleColumn, direccionNumeroExteriorColumn, direccionNumeroInteriorColumn, coloniaColumn, alcaldiaColumn, telefonoProvedorColumn);
+        this.tablaProductos.getColumns().setAll(claveColumn,descripcionColumn, unidadMedidaColumn, precioColumn, unidadColumn, provedorColumn,direccionCalleColumn, direccionNumeroExteriorColumn, direccionNumeroInteriorColumn, coloniaColumn, alcaldiaColumn, telefonoProvedorColumn);
     }
 
 
     //Metodo para crear una nueva fila, recibe como parametro y los guarda en el arraylist que es propiedad de está clase
     public void crearfila(String clave, String descripcion, String unidadMedida, double precio, int unidad, String provedor, String calle, String numeroExterior, String numeroInterior, String colonia, String alcaldia, String telefonoProvedor){
         productos.add(new Producto(clave, descripcion, unidadMedida, precio, unidad, provedor, calle, numeroExterior, numeroInterior, colonia, alcaldia, telefonoProvedor));
+    }
+
+    public void limpiarTabla(){
+        productos.clear();
+    }
+
+    public void asignarTextoTablavacia(String frase){
+        this.tablaProductos.setPlaceholder(new Label(frase));
     }
 
 }

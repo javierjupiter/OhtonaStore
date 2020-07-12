@@ -9,7 +9,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource(/*"sample.fxml"));//*/"Catalogo_UI.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Catalogo_UI.fxml"));
         primaryStage.setTitle("Ohtona Store");
         primaryStage.setResizable(true);
         Image icon = new Image(getClass().getResourceAsStream("/images/ohtona_mini.png"));
