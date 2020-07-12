@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Ohtona Store:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Ohtona_Store_jar</output-path>
+    <root id="archive" name="Ohtona Store.jar">
+      <element id="module-output" name="Ohtona Store" />
+      <element id="library" level="project" name="jfoenix-9.0.10" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/librerias/jfoenix-8.0.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/librerias/mysql-connector-java-5.1.49.jar" path-in-jar="/" />
+      <element id="library" level="project" name="jfoenix-8.0.10" />
+    </root>
+  </artifact>
+</component>

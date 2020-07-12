@@ -11,7 +11,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Catalogo_UI.fxml"));
         primaryStage.setTitle("Ohtona Store");
-        primaryStage.setResizable(true);
+        primaryStage.setResizable(false);
         Image icon = new Image(getClass().getResourceAsStream("/images/ohtona_mini.png"));
         primaryStage.getIcons().add(icon);
         primaryStage.setScene(new Scene(root, 1000, 600));
