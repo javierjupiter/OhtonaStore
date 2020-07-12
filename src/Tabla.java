@@ -120,7 +120,6 @@ public class Tabla {
         //Se oculta la raiz para que no se muestre en pantalla
         this.tablaProductos.setShowRoot(false);
         this.tablaProductos.setEditable(false);
-        this.tablaProductos.setPrefWidth(1000);
         //Asignamos todas las columnas a la tabla para mostrar
         this.tablaProductos.getColumns().setAll(claveColumn,descripcionColumn, unidadMedidaColumn, precioColumn, unidadColumn, provedorColumn,direccionCalleColumn, direccionNumeroExteriorColumn, direccionNumeroInteriorColumn, coloniaColumn, alcaldiaColumn, telefonoProvedorColumn);
     }
@@ -131,10 +130,12 @@ public class Tabla {
         productos.add(new Producto(clave, descripcion, unidadMedida, precio, unidad, provedor, calle, numeroExterior, numeroInterior, colonia, alcaldia, telefonoProvedor));
     }
 
+    //Vacia la tabla para poder reiniciarla
     public void limpiarTabla(){
         productos.clear();
     }
 
+    //Asigna frase a la tabla cuando está vacia
     public void asignarTextoTablavacia(String frase){
         this.tablaProductos.setPlaceholder(new Label(frase));
     }
