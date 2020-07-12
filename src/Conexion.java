@@ -6,7 +6,7 @@ public class Conexion {
     static String bd = "ohtona_store";
     static String login = "javierjupiter";
     static String password = "jupiter";
-    static String url = "jdbc:mysql://localhost/" + bd;
+    static String url = "jdbc:mysql://localhost:3306/" + bd + "?verifyServerCertificate=false&useSSL=true";
 
     Connection conn = null;
 
